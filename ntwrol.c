@@ -1,32 +1,44 @@
 #include <stdio.h>
-#inlcude < stdlib.h>
-int input(char str[], int n);
+#include <stdlib.h>
+#include<string.h>
 
-int main()
-{
-    char str[100];
-    int size;
-    scanf("%d", &size);
-    // Get char is used in order to consume the newline character in the input buffer which is being picked up by the getchar() function.
-    getchar();
-    int n = input(str, size);
-    printf("%d %s", n, str);
-    return 0;
-}
+int main(){
+  char key[100],data[100],temp[100],quo[100],rem[100];
+  int i,j,keyl,datal;
 
-int input(char str[], int n)
-{
-    int ch, i = 0;
-    while ((ch = getchar()) != '\n')
-    {
-        if (i < n)
-        {
-            str[i++] = ch;
-        }
-        else
-        {
-            str[i] = '\0';
-        }
-    }
-    return i;
+  printf("Enter the data\n");
+  scanf("%s",data);
+  printf("enter the key\n");
+  scanf("%s",key);
+
+  keyl=strlen(key);
+  datal=strlen(data);
+
+  printf("%d\n",keyl);
+  printf("%d\n",datal);
+
+  for(i=0;i<datal;i++){
+    temp[i]=data[i];
+
+  }
+  
+  
+  for(i=0;i<keyl-1;i++){
+    temp[datal+i]='0';
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+  printf("%s\n",temp);
+
+  return 0;
+
 }
